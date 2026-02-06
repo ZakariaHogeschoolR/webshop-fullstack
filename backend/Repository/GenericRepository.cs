@@ -13,20 +13,12 @@ public class GenericRepository<T> where T : class
 
     public async Task<List<T>> GetAllAsync()
     {
-        var query = from e in _set
-                    select e;
-
-        return await query.ToListAsync(); // EF Core generates SQL
+        return await _set.ToListAsync(); // EF Core generates SQL
     }
 
-    public async Task<T?> GetByIdAsync(Func<T, bool> predicate)
+    public async Task<T?> GetByIdAsync(int id)
     {
-        var query = from e in _set
-                    where predicate.Invoke(e)
-                    select e;
-
-        return await query.FirstOrDefaultAsync();
-
+        return await _set.FindAsync(id);
     }
 
     public async Task AddAsync(T entity)
