@@ -5,26 +5,43 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ## Description
-Production-style Webshop backend built with ASP.NET Core, PostgreSQL, EF Core, DTO-based architecture, and layered service/repository pattern.  
-This project demonstrates clean architecture principles, DTO validation, and scalable RESTful API design.
+This is a production-style Webshop backend built with ASP.NET Core 9, PostgreSQL, and Entity Framework Core. It follows clean architecture principles with layered Controllers, Services, Repositories, and DbContext, and uses DTOs for request/response validation.
 
 ## Tech Stack
 - ASP.NET Core 9
 - PostgreSQL
 - Entity Framework Core
-- AutoMapper (DTO mapping)
-- FluentValidation (request validation)
-- RESTful API
+- AutoMapper for DTO mapping
+- FluentValidation for request validation
+- Git & GitHub
 
 ## Features
-- CRUD operations for all main entities (Products, Users, Orders, etc.)  
-- DTO-based request/response handling  
-- Service layer encapsulating business logic  
-- Generic repository pattern  
-- PostgreSQL database integration  
-- Ready for authentication, pagination, and filtering  
+- CRUD operations for Users, Products, Orders, etc.
+- DTO-based request and response handling
+- Layered service and repository architecture
+- PostgreSQL database integration with EF Core
+- Structured for authentication, filtering, and pagination
+- Ready for future unit testing and scalability
 
-## Setup Instructions
-1. Clone the repo:  
-```bash
-git clone https://github.com/ZakariaHogeschoolR/webshop-fullstack.git
+## Architecture Overview
+HTTP Request → Controller → Service → Repository → DbContext → PostgreSQL Database
+
+- Controllers orchestrate requests and return DTOs
+- Services encapsulate business logic
+- Repositories handle data access
+- DTOs decouple database models from API contracts
+
+## Getting Started
+1. Clone the repository from GitHub and navigate to the project folder.
+2. Configure the database connection in `appsettings.Development.json` with your PostgreSQL credentials.
+3. Apply EF Core migrations to create the database schema.
+4. Run the project. The API will be available on your configured localhost port. Swagger may be enabled for endpoint documentation.
+
+## Contributing
+- Fork the repository
+- Create a feature branch
+- Commit your changes with clear messages
+- Push and submit a pull request
+
+## License
+This project is licensed under the MIT License.
