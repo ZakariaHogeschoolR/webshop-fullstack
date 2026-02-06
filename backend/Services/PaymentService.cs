@@ -22,7 +22,7 @@ namespace Webshop.Services
 
         public async Task<Payment> GetByIdService(int id)
         {
-            var Payment = await _repository.GetByIdAsync(x => x.Id == id);
+            var Payment = await _repository.GetByIdAsync(id);
             
             if (Payment == null)
             {

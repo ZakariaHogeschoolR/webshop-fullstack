@@ -22,7 +22,7 @@ namespace Webshop.Services
 
         public async Task<CartItem> GetByIdService(int id)
         {
-            var CartItem = await _repository.GetByIdAsync(x => x.Id == id);
+            var CartItem = await _repository.GetByIdAsync(id);
             
             if (CartItem == null)
             {

@@ -10,9 +10,11 @@ namespace Webshop.Services
     public class ProductCategoryService
     {
         private readonly GenericRepository<ProductCategory> _repository;
-        public ProductCategoryService(GenericRepository<ProductCategory> repository)
+        private readonly ProductCategoryRepository _productCategoryRepository;
+        public ProductCategoryService(GenericRepository<ProductCategory> repository, ProductCategoryRepository productCategoryRepository)
         {
             _repository = repository;
+            _productCategoryRepository = productCategoryRepository;
         }
 
         public async Task<List<ProductCategory>>  GetAllService()
@@ -20,9 +22,9 @@ namespace Webshop.Services
             return await _repository.GetAllAsync();
         }
 
-        public async Task<ProductCategory> GetByIdService(int id)
+        public async Task<ProductCategory> GetByIdService(int productId, int categoryId)
         {
-            var productCategory = await _repository.GetByIdAsync(x => x.Id == id);
+            var productCategory = await _productCategoryRepository.GetByIdAsync(productId, categoryId);
             
             if (productCategory == null)
             {
@@ -52,9 +54,9 @@ namespace Webshop.Services
             await _repository.UpdateAsync(productCategoryUpdate);
         }
 
-        public async Task DeleteService(int id)
+        public async Task DeleteService(int productId, int categoryId)
         {
-            var productCategory = await this.GetByIdService(id);
+            var productCategory = await this.GetByIdService(productId, categoryId);
             await _repository.DeleteAsync(productCategory);
         }
     }
