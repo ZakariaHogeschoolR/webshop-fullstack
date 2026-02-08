@@ -1,0 +1,6 @@
+.nav-logo-img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* makes logo white */
+}

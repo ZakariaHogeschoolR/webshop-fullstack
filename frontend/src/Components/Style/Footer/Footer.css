@@ -1,0 +1,75 @@
+/* ===== COLORS ===== */
+:root {
+  --beige: #EDE7DC;
+  --sand: #DCCEB8;
+  --blue: #1F3A4D;
+  --green: #1F6F5B;
+  --red: #8C2F2F;
+}
+
+/* FOOTER CONTAINER */
+.extra-footer {
+  background-color: var(--blue);
+  color: var(--beige);
+  padding: 3rem 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* TOP PART: LOGO + LINKS */
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto 2rem auto;
+}
+
+/* LOGO */
+.footer-logo p {
+  font-size: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  color: var(--beige);
+  font-weight: 600;
+}
+
+/* LINKS */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: var(--sand);
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--green);
+}
+
+/* BOTTOM PART */
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--sand);
+  border-top: 1px solid rgba(237, 231, 220, 0.3);
+  padding-top: 1rem;
+}
+
+/* OPTIONAL: Subtle overlay pattern (like header) */
+.extra-footer::after {
+  content: '';
+  position: absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+  background-image: url('../../assets/moroccan-chinese-pattern.svg');
+  opacity: 0.03;
+  pointer-events: none;
+}
