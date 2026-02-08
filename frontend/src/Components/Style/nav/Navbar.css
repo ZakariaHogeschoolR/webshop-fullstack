@@ -1,0 +1,138 @@
+:root {
+  --beige: #EDE7DC;
+  --sand: #DCCEB8;
+  --deep-blue: #0B2B4F;
+  --green: #1F6F5B;
+  --red: #8C2F2F;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== NAVBAR HEADER ===== */
+.extra-navbar-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* On scroll: background + shadow */
+.extra-navbar-header.scrolled {
+  background-color: var(--deep-blue);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ===== NAVBAR INNER ===== */
+.extra-navbar {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 80px;
+  padding: 0 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Inter', sans-serif;
+}
+
+/* LEFT */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+/* LINKS */
+.navbar-link,
+.navbar-login,
+.navbar-cta {
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.6px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* INITIAL (no scroll) */
+.initial-link {
+  color: var(--deep-blue);
+}
+
+.initial-cta {
+  color: var(--deep-blue);
+  
+}
+
+/* SCROLLED */
+.scrolled-link {
+  color: var(--beige);
+}
+
+.scrolled-cta {
+  color: var(--beige);
+}
+
+/* Hover effects */
+.navbar-link:hover {
+  color: var(--green);
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--red);
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+  width: 100%;
+}
+
+/* RIGHT */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.navbar-cta:hover {
+  background-color: var(--green);
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.login:hover{
+  background-color: beige;
+  color: var(--deep-blue);
+  padding: 5px;
+  border-radius: 20px; 
+}

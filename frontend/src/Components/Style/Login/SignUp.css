@@ -1,0 +1,118 @@
+/* ===============================
+   SIGN UP PAGE – ISOLATED STYLES
+   =============================== */
+
+/* PAGE STRUCTURE */
+.signup-page {
+  min-height: 120vh;
+  margin-top: 50px;
+  margin-bottom: -100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--sand), var(--beige));
+  padding: 20px;
+}
+
+/* FORM CONTAINER */
+.signup-form {
+  width: 540px;
+  padding: 42px;
+  background-color: var(--beige);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 22px;
+}
+
+/* TITLE */
+.signup-form h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 28px;
+  color: var(--deep-blue);
+  margin-bottom: 10px;
+}
+
+/* FIELD WRAPPER */
+.signup-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* FULL WIDTH FIELDS */
+.signup-full {
+  grid-column: 1 / -1;
+}
+
+/* LABELS */
+.signup-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--deep-blue);
+}
+
+/* INPUTS */
+.signup-input {
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: 3px solid var(--deep-blue);
+  background-color: transparent;
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.signup-input:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 4px rgba(31, 111, 91, 0.15);
+}
+
+/* PLACEHOLDER (optional subtle styling) */
+.signup-input::placeholder {
+  color: rgba(31, 43, 79, 0.4);
+}
+
+/* BUTTON */
+.signup-submit {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--deep-blue);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.signup-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+   =============================== */
+@media (max-width: 600px) {
+  .signup-form {
+    width: 100%;
+    padding: 32px;
+    grid-template-columns: 1fr;
+  }
+
+  .signup-full {
+    grid-column: 1 / -1;
+  }
+}
